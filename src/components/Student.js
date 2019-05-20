@@ -37,12 +37,14 @@ export default class Student extends React.Component {
       return (
         <section className="student-extra-info">
           <table className="grade-table">
-            {this.props.info.grades.map((grade, i) => (
-              <tr>
-                <td>Test {i}:</td>
-                <td>{grade}%</td>
-              </tr>
-            ))}
+            <tbody>
+              {this.props.info.grades.map((grade, i) => (
+                <tr key={i}>
+                  <td>Test {i}:</td>
+                  <td>{grade}%</td>
+                </tr>
+              ))}
+            </tbody>
           </table>
         </section>
       );
