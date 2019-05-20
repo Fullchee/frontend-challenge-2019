@@ -1,3 +1,17 @@
 .grade-table {
     border-spacing: 15px 0px;
 }
+
+.student-thumb {
+    float: left;
+
+    img {
+        display: block;
+        margin-left: 50px;
+        height: 100px;
+    }
+}
+
+.student-content {
+    margin-left: 200px;
+}

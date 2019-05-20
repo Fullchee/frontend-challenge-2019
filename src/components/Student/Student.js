@@ -65,29 +65,33 @@ export default class Student extends React.Component {
   render() {
     return (
       <div>
-        <img
-          src={this.props.info.pic}
-          alt={`${this.props.info.firstName} ${this.props.info.lastName}`}
-        />
-        <h2 className="student-name">
-          {`${this.props.info.firstName} ${
-            this.props.info.lastName
-          }`.toUpperCase()}
-        </h2>
-        <section className="student-info">
-          <p>Email: {this.props.info.email}</p>
-          <p>Company: {this.props.info.company}</p>
-          <p>Skill: {this.props.info.skill}</p>
-          <p>Average: {this.calcAverage()}%</p>
-        </section>
+        <div className="student-thumb">
+          <img
+            src={this.props.info.pic}
+            alt={`${this.props.info.firstName} ${this.props.info.lastName}`}
+          />
+        </div>
+        <div className="student-content">
+          <h2 className="student-name">
+            {`${this.props.info.firstName} ${
+              this.props.info.lastName
+            }`.toUpperCase()}
+          </h2>
+          <section className="student-info">
+            <p>Email: {this.props.info.email}</p>
+            <p>Company: {this.props.info.company}</p>
+            <p>Skill: {this.props.info.skill}</p>
+            <p>Average: {this.calcAverage()}%</p>
+          </section>
 
-        <ToggleButton
-          key={this.props.info.id}
-          onClick={() =>
-            this.setState({ showExtraInfo: !this.state.showExtraInfo })
-          }
-        />
-        {this.showExtraInfo()}
+          <ToggleButton
+            key={this.props.info.id}
+            onClick={() =>
+              this.setState({ showExtraInfo: !this.state.showExtraInfo })
+            }
+          />
+          {this.showExtraInfo()}
+        </div>
       </div>
     );
   }
