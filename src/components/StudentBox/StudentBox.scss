@@ -21,3 +21,13 @@
     // background: transparent;
     /* Optional: just make scrollbar invisible */
 }
+
+.header {
+    position: fixed;
+    background: white;
+    width: 50%;
+}
+
+.content {
+    padding-top: 80px;
+}

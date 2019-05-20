@@ -67,10 +67,14 @@ export default class StudentBox extends React.Component {
   render() {
     return (
       <div id="student-box">
-        <Filter handleFilterChange={this.handleFilterChange} />
-        {this.state.students.map(student => (
-          <Student key={student.id} info={student} addTag={this.addTag} />
-        ))}
+        <section className="header">
+          <Filter handleFilterChange={this.handleFilterChange} />
+        </section>
+        <section className="content">
+          {this.state.students.map(student => (
+            <Student key={student.id} info={student} addTag={this.addTag} />
+          ))}
+        </section>
       </div>
     );
   }
