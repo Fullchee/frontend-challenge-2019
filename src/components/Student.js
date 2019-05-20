@@ -15,12 +15,32 @@ export default class Student extends React.Component {
   /**
    * @returns {Number} - average of grades given in props
    */
+  constructor(props) {
+    super(props);
+    this.calcAverage = this.calcAverage.bind(this);
+    this.showExtraInfo = this.showExtraInfo.bind(this);
+  }
   calcAverage() {
     const gradeSum = this.props.info.grades.reduce(
       (acc, curr) => acc + parseFloat(curr),
       0
     );
     return gradeSum / this.props.info.grades.length;
+  }
+
+  showExtraInfo() {
+    return (
+      <section className="student-extra-info">
+        <table className="grade-table">
+          {this.props.info.grades.map((grade, i) => (
+            <tr>
+              <td>Test {i}:</td>
+              <td>{grade}%</td>
+            </tr>
+          ))}
+        </table>
+      </section>
+    );
   }
   render() {
     return (
@@ -40,6 +60,8 @@ export default class Student extends React.Component {
           <p>Skill: {this.props.info.skill}</p>
           <p>Average: {this.calcAverage()}%</p>
         </section>
+
+        {this.showExtraInfo()}
       </div>
     );
   }

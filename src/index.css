@@ -5,6 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  scrollbar-width: none;
+  /* hide scrollbar in firefox  */
 }
 
 code {
@@ -24,4 +26,8 @@ code {
   /* Remove scrollbar space */
   background: transparent;
   /* Optional: just make scrollbar invisible */
+}
+
+.grade-table {
+  border-spacing: 15px 0px;
 }
