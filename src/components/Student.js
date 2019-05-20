@@ -1,4 +1,5 @@
 import React from "react";
+import ToggleButton from "./ToggleButton";
 /*
 city: "Fushë-Muhurr"
 company: "Yadel"
@@ -19,6 +20,9 @@ export default class Student extends React.Component {
     super(props);
     this.calcAverage = this.calcAverage.bind(this);
     this.showExtraInfo = this.showExtraInfo.bind(this);
+    this.state = {
+      showExtraInfo: false
+    };
   }
   calcAverage() {
     const gradeSum = this.props.info.grades.reduce(
@@ -29,18 +33,20 @@ export default class Student extends React.Component {
   }
 
   showExtraInfo() {
-    return (
-      <section className="student-extra-info">
-        <table className="grade-table">
-          {this.props.info.grades.map((grade, i) => (
-            <tr>
-              <td>Test {i}:</td>
-              <td>{grade}%</td>
-            </tr>
-          ))}
-        </table>
-      </section>
-    );
+    if (this.state.showExtraInfo) {
+      return (
+        <section className="student-extra-info">
+          <table className="grade-table">
+            {this.props.info.grades.map((grade, i) => (
+              <tr>
+                <td>Test {i}:</td>
+                <td>{grade}%</td>
+              </tr>
+            ))}
+          </table>
+        </section>
+      );
+    }
   }
   render() {
     return (
@@ -61,6 +67,12 @@ export default class Student extends React.Component {
           <p>Average: {this.calcAverage()}%</p>
         </section>
 
+        <ToggleButton
+          key={this.props.info.id}
+          onClick={() =>
+            this.setState({ showExtraInfo: !this.state.showExtraInfo })
+          }
+        />
         {this.showExtraInfo()}
       </div>
     );
