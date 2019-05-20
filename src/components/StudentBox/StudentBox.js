@@ -1,6 +1,7 @@
 import React from "react";
-import Student from "./Student";
-import Filter from "./Filter";
+import Student from "../Student/Student";
+import Filter from "../Filter/Filter";
+import "./StudentBox.scss";
 
 export default class StudentBox extends React.Component {
   constructor(props) {

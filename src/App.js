@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import StudentBox from "./components/StudentBox";
+import StudentBox from "./components/StudentBox/StudentBox";
 
 class App extends React.Component {
   render() {

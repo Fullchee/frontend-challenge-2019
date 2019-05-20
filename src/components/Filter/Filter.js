@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-
+import "./Filter.scss";
 export default class Filter extends React.Component {
   constructor(props) {
     super(props);
@@ -36,6 +36,7 @@ export default class Filter extends React.Component {
             value={this.state.value}
             onChange={this.searchNameChange}
             placeholder="Search by name"
+            className="filter"
           />
         </div>
         <div>
@@ -44,6 +45,7 @@ export default class Filter extends React.Component {
             value={this.state.value}
             onChange={this.searchTagChange}
             placeholder="Search by tags"
+            className="filter"
           />
         </div>
       </div>

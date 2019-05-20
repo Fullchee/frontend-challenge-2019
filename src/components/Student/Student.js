@@ -1,7 +1,8 @@
 import React from "react";
-import ToggleButton from "./ToggleButton";
+import ToggleButton from "../ToggleButton/ToggleButton";
 import PropTypes from "prop-types";
-import TextInput from "./TextInput";
+import TextInput from "../TextInput/TextInput";
+import "./Student.scss";
 
 /*
 city: "Fushë-Muhurr"
