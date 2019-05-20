@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import "./ToggleButton.scss";
 
 export default class ToggleButton extends React.Component {
   /**
@@ -23,7 +24,11 @@ export default class ToggleButton extends React.Component {
   }
 
   render() {
-    return <button onClick={this.onClick}>{this.state.text}</button>;
+    return (
+      <button className="toggle-button" onClick={this.onClick}>
+        {this.state.text}
+      </button>
+    );
   }
 }
 

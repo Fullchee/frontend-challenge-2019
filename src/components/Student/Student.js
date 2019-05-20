@@ -72,6 +72,12 @@ export default class Student extends React.Component {
           />
         </div>
         <div className="student-content">
+          <ToggleButton
+            key={this.props.info.id}
+            onClick={() =>
+              this.setState({ showExtraInfo: !this.state.showExtraInfo })
+            }
+          />
           <h2 className="student-name">
             {`${this.props.info.firstName} ${
               this.props.info.lastName
@@ -83,13 +89,6 @@ export default class Student extends React.Component {
             <p>Skill: {this.props.info.skill}</p>
             <p>Average: {this.calcAverage()}%</p>
           </section>
-
-          <ToggleButton
-            key={this.props.info.id}
-            onClick={() =>
-              this.setState({ showExtraInfo: !this.state.showExtraInfo })
-            }
-          />
           {this.showExtraInfo()}
         </div>
       </div>
