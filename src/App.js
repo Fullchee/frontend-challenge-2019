@@ -3,12 +3,9 @@ import "./App.css";
 import StudentBox from "./components/StudentBox";
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     return (
-      <div>
+      <div className="student-box">
         <StudentBox />
       </div>
     );
