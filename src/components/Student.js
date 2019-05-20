@@ -1,6 +1,7 @@
 import React from "react";
 import ToggleButton from "./ToggleButton";
 import PropTypes from "prop-types";
+import TextInput from "./TextInput";
 
 /*
 city: "Fushë-Muhurr"
@@ -48,6 +49,14 @@ export default class Student extends React.Component {
               ))}
             </tbody>
           </table>
+          <section className="tag-section">
+            {this.props.info.tags.map(tag => {
+              return <span className="tag">{tag}</span>;
+            })}
+            <TextInput
+              onEnter={this.props.addTag(parseInt(this.props.info.id, 10) - 1)}
+            />
+          </section>
         </section>
       );
     }

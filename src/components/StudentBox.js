@@ -48,14 +48,19 @@ export default class StudentBox extends React.Component {
     }
   }
 
-  addTag(index, name) {
+  addTag(index) {
     // prevent duplicate tags
-    this.setState({
-      ...this.state.allStudents,
-      [index]: {
-        tags: this.state.allStudents[index].tags.push(name)
-      }
-    });
+    return name => {
+      console.log("Added a tag!", name);
+      console.log(index);
+      console.log(this.state.allStudents[index]);
+      this.setState({
+        ...this.state.allStudents,
+        [index]: {
+          tags: this.state.allStudents[index].tags.push(name)
+        }
+      });
+    };
   }
 
   render() {
