@@ -1,5 +1,7 @@
 import React from "react";
 import ToggleButton from "./ToggleButton";
+import PropTypes from "prop-types";
+
 /*
 city: "Fushë-Muhurr"
 company: "Yadel"
@@ -80,3 +82,17 @@ export default class Student extends React.Component {
     );
   }
 }
+
+Student.propTypes = {
+  info: PropTypes.shape({
+    city: PropTypes.string.isRequired,
+    company: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+    firstName: PropTypes.string.isRequired,
+    lastName: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
+    pic: PropTypes.string.isRequired,
+    skill: PropTypes.string.isRequired,
+    grades: PropTypes.arrayOf(PropTypes.string)
+  })
+};

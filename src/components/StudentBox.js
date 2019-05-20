@@ -69,4 +69,3 @@ export default class StudentBox extends React.Component {
     );
   }
 }
-// TODO: react prop types

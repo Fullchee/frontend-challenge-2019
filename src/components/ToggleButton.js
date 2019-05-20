@@ -1,6 +1,7 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-export default class Student extends React.Component {
+export default class ToggleButton extends React.Component {
   /**
    * @returns {Number} - average of grades given in props
    */
@@ -25,3 +26,7 @@ export default class Student extends React.Component {
     return <button onClick={this.onClick}>{this.state.text}</button>;
   }
 }
+
+ToggleButton.propTypes = {
+  onClick: PropTypes.func.isRequired
+};
