@@ -44,7 +44,7 @@ export default class Student extends React.Component {
             <tbody>
               {this.props.info.grades.map((grade, i) => (
                 <tr key={i}>
-                  <td>Test {i}:</td>
+                  <td>Test {i + 1}:</td>
                   <td>{grade}%</td>
                 </tr>
               ))}

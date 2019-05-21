@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import "./TextInput.scss";
 
 export default class TextInput extends React.Component {
   constructor(props) {
@@ -30,13 +31,16 @@ export default class TextInput extends React.Component {
 
   render() {
     return (
-      <input
-        type="text"
-        value={this.state.value}
-        onChange={this.onChange}
-        onKeyPress={this.onKeyPress}
-        placeholder="Add a tag"
-      />
+      <div>
+        <input
+          type="text"
+          value={this.state.value}
+          onChange={this.onChange}
+          onKeyPress={this.onKeyPress}
+          placeholder="Add a tag"
+          className="tag-input"
+        />
+      </div>
     );
   }
 }
