@@ -52,9 +52,6 @@ export default class StudentBox extends React.Component {
   addTag(index) {
     // prevent duplicate tags
     return name => {
-      console.log("Added a tag!", name);
-      console.log(index);
-      console.log(this.state.allStudents[index]);
       this.setState({
         ...this.state.allStudents,
         [index]: {
