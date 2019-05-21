@@ -4,18 +4,6 @@ import PropTypes from "prop-types";
 import TextInput from "../TextInput/TextInput";
 import "./Student.scss";
 
-/*
-city: "Fushë-Muhurr"
-company: "Yadel"
-email: "iorton0@imdb.com"
-firstName: "Ingaberg"
-grades: (8) ["78", "100", "92", "86", "89", "88", "91", "87"]
-id: "1"
-lastName: "Orton"
-pic: "https://storage.googleapis.com/hatchways-app.appspot.com/assessments/data/frontend/images/voluptasdictablanditiis.jpg"
-skill: "Oracle"
-*/
-
 export default class Student extends React.Component {
   /**
    * @returns {Number} - average of grades given in props

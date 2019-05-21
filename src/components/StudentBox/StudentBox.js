@@ -2,6 +2,7 @@ import React from "react";
 import Student from "../Student/Student";
 import Filter from "../Filter/Filter";
 import "./StudentBox.scss";
+import { students } from "../../data/students.json";
 
 export default class StudentBox extends React.Component {
   constructor(props) {
@@ -15,11 +16,13 @@ export default class StudentBox extends React.Component {
     this.addTag = this.addTag.bind(this);
   }
   async componentDidMount() {
-    const res = await fetch("https://www.hatchways.io/api/assessment/students");
-    if (res.status !== 200) {
-      console.error("Unable to reach API");
-    }
-    const { students } = await res.json();
+    // const res = await fetch("https://www.company.io/api/assessment/students");
+    // if (res.status !== 200) {
+    //   console.error("Unable to reach API");
+    // }
+    // const { students } = await res.json();
+
+    // students is imported from a JSON file
     const studentsWithTags = students.map(student => {
       return { ...student, tags: [] };
     });
