@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "./Filter.scss";
+
 export default class Filter extends React.Component {
   constructor(props) {
     super(props);

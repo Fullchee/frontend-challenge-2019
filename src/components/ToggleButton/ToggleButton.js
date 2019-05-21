@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "./ToggleButton.scss";
+import plusImg from "../../img/plus.jpg";
+import minusImg from "../../img/minus.jpg";
 
 export default class ToggleButton extends React.Component {
   /**
@@ -10,7 +12,7 @@ export default class ToggleButton extends React.Component {
     super(props);
     this.state = {
       on: false,
-      text: "+"
+      imgSrc: plusImg
     };
     this.onClick = this.onClick.bind(this);
   }
@@ -19,15 +21,19 @@ export default class ToggleButton extends React.Component {
     this.props.onClick();
     this.setState({
       on: !this.state.on,
-      text: !this.state.on ? "-" : "+"
+      imgSrc: !this.state.on ? minusImg : plusImg
     });
   }
 
   render() {
     return (
-      <button className="toggle-button" onClick={this.onClick}>
-        {this.state.text}
-      </button>
+      <input
+        type="image"
+        src={this.state.imgSrc}
+        className="toggle-button"
+        onClick={this.onClick}
+        alt="Click to toggle showing extra student info"
+      />
     );
   }
 }
