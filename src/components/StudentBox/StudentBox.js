@@ -30,21 +30,25 @@ export default class StudentBox extends React.Component {
   }
 
   handleFilterChange({ nameFilter, tagFilter }) {
-    if (nameFilter === "" && tagFilter === "") {
+    let nameFiltered;
+    if (nameFilter === "") {
+      nameFiltered = this.state.allStudents;
+    } else {
+      nameFiltered = this.state.allStudents.filter(student => {
+        return (
+          student.firstName.toLowerCase() + student.lastName.toLowerCase()
+        ).includes(nameFilter.toLowerCase());
+      });
+    }
+    if (tagFilter === "") {
       this.setState({
-        students: this.state.allStudents
+        students: nameFiltered
       });
     } else {
       this.setState({
-        students: this.state.allStudents
-          .filter(student => {
-            return (
-              student.firstName.toLowerCase() + student.lastName.toLowerCase()
-            ).includes(nameFilter.toLowerCase());
-          })
-          .filter(student => {
-            return student.tags.some(tag => tag.includes(tagFilter));
-          })
+        students: nameFiltered.filter(student => {
+          return student.tags.some(tag => tag.includes(tagFilter));
+        })
       });
     }
   }
