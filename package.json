@@ -1,7 +1,7 @@
 {
   "name": "frontend-challenge-2019",
   "version": "0.1.0",
-  "homepage": "http://fullchee.github.io/frontend-challenge-2019",
+  "homepage": "https://fullchee.github.io/frontend-challenge-2019",
   "dependencies": {
     "node-sass": "^4.12.0",
     "react": "^16.8.6",
